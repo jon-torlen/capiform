@@ -1,0 +1,115 @@
+/* ============ REGISTRO · EFECTO MÁGICO ============ */
+
+body {
+  padding: 12px;
+  overflow-x: hidden;
+}
+
+/* Lienzo de confeti y partículas (va por encima de todo, sin capturar clics) */
+#magicCanvas {
+  position: fixed;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 50;
+}
+
+.register-card {
+  padding: 22px 30px 20px;
+  position: relative;
+  z-index: 2;
+}
+
+.register-card .avatar {
+  width: 118px;
+  height: 118px;
+  margin-bottom: 2px;
+  filter: drop-shadow(0 6px 0 rgba(67, 88, 103, 0.10));
+}
+
+.eyebrow {
+  margin-top: 2px;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #FF9124;
+}
+
+.register-card h1 {
+  font-size: 1.35rem;
+  margin-top: 2px;
+}
+
+.register-card .subtitle {
+  margin: 4px 0 14px;
+  font-size: 0.84rem;
+}
+
+.register-card .field {
+  margin-bottom: 8px;
+}
+
+.register-card .field label {
+  margin-bottom: 4px;
+  font-size: 0.76rem;
+}
+
+.register-card .field input {
+  height: 43px;
+  font-size: 0.9rem;
+  border-radius: 12px;
+}
+
+.register-card .toggle-pass {
+  right: 6px;
+  width: 32px;
+  height: 32px;
+}
+
+.register-card .submit-btn {
+  height: 47px;
+  margin-top: 4px;
+}
+
+.match-hint {
+  min-height: 1.1em;
+  margin: 2px 0 6px;
+  font-size: 0.76rem;
+  font-weight: 800;
+  color: #7b8f9c;
+  transition: color 0.25s ease;
+}
+
+.match-hint.ok {
+  color: #78B159;
+}
+
+.match-hint.warn {
+  color: #E67E17;
+}
+
+.register-card .footer {
+  margin-top: 8px;
+}
+
+.register-card .status {
+  margin-top: 4px;
+}
+
+.register-card .credit {
+  margin-top: 8px;
+  padding-top: 4px;
+  padding-bottom: 4px;
+}
+
+@media (max-width: 480px) {
+  .register-card {
+    padding: 18px 20px 16px;
+  }
+  .register-card .avatar {
+    width: 104px;
+    height: 104px;
+  }
+}

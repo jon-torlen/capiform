@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login Capybara 🍊</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='88'%3E%F0%9F%8D%8A%3C/text%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="login-card">
+    <!-- ============ AVATAR SVG MODULAR ============ -->
+    <div class="avatar" aria-hidden="true">
+      <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Capibara kawaii con una naranja en la cabeza">
+        <defs>
+          <clipPath id="avatarClip">
+            <circle cx="200" cy="200" r="182" />
+          </clipPath>
+        </defs>
+
+        <!-- Fondo del círculo -->
+        <circle class="avatar-bg" cx="200" cy="200" r="186" fill="#AEE1F5" stroke="#435867" stroke-width="7" />
+
+        <g clip-path="url(#avatarClip)">
+          <!-- CUERPO (respiración) -->
+          <g id="body">
+            <path d="M 88 400 C 88 285 112 232 158 222 L 242 222 C 288 232 312 285 312 400 Z"
+                  fill="#C18A59" stroke="#435867" stroke-width="6" stroke-linejoin="round" />
+            <ellipse cx="200" cy="374" rx="78" ry="54" fill="#E4BE9E" />
+            <!-- Líneas de pecho / mejillas -->
+            <path d="M 132 262 Q 142 278 156 283" fill="none" stroke="#435867" stroke-width="6" stroke-linecap="round" />
+            <path d="M 268 262 Q 258 278 244 283" fill="none" stroke="#435867" stroke-width="6" stroke-linecap="round" />
+            <!-- Pelaje zigzag -->
+            <path d="M 138 292 L 147 300 L 139 306 L 148 314" fill="none" stroke="#435867" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+            <path d="M 262 292 L 253 300 L 261 306 L 252 314" fill="none" stroke="#435867" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+          </g>
+
+          <!-- OREJAS (detrás de la cabeza) -->
+          <g id="ears">
+            <g id="ears-bounce">
+              <g id="ear-left">
+                <path d="M 126 124 C 120 100 132 86 148 94 C 158 100 160 114 155 126 Z"
+                      fill="#C18A59" stroke="#435867" stroke-width="6" stroke-linejoin="round" />
+                <path d="M 136 118 C 134 106 140 100 146 106" fill="none" stroke="#435867" stroke-width="5" stroke-linecap="round" />
+              </g>
+              <g id="ear-right">
+                <path d="M 274 124 C 280 100 268 86 252 94 C 242 100 240 114 245 126 Z"
+                      fill="#C18A59" stroke="#435867" stroke-width="6" stroke-linejoin="round" />
+                <path d="M 264 118 C 266 106 260 100 254 106" fill="none" stroke="#435867" stroke-width="5" stroke-linecap="round" />
+              </g>
+            </g>
+          </g>
+
+          <!-- CABEZA -->
+          <g id="head">
+            <path d="M 200 98 C 258 98 292 138 292 190 C 292 236 262 272 200 278 C 138 272 108 236 108 190 C 108 138 142 98 200 98 Z"
+                  fill="#C18A59" stroke="#435867" stroke-width="6" stroke-linejoin="round" />
+          </g>
+
+          <!-- OJOS -->
+          <g id="eyes">
+            <ellipse id="eye-left" cx="166" cy="175" rx="9" ry="11" fill="#435867" />
+            <ellipse id="eye-right" cx="234" cy="175" rx="9" ry="11" fill="#435867" />
+          </g>
+
+          <!-- HOCICO / BOCA -->
+          <g id="snout">
+            <rect x="160" y="185" width="80" height="88" rx="34" fill="#E4BE9E" stroke="#435867" stroke-width="6" />
+            <path d="M 178 207 Q 186 199 194 207" fill="none" stroke="#435867" stroke-width="5" stroke-linecap="round" />
+            <path d="M 206 207 Q 214 199 222 207" fill="none" stroke="#435867" stroke-width="5" stroke-linecap="round" />
+            <path d="M 200 214 L 200 240" fill="none" stroke="#435867" stroke-width="6" stroke-linecap="round" />
+            <g id="mouth">
+              <path id="mouth-idle" d="M 181 246 Q 191 258 200 247 Q 209 258 219 246"
+                    fill="none" stroke="#435867" stroke-width="6" stroke-linecap="round" stroke-linejoin="round" />
+              <path id="mouth-smile" d="M 175 240 Q 200 270 225 240"
+                    fill="none" stroke="#435867" stroke-width="6" stroke-linecap="round" />
+            </g>
+          </g>
+
+          <!-- NARANJA CON HOJA -->
+          <g id="orange">
+            <g id="orange-tilt">
+              <path d="M 198 54 Q 196 40 188 34" fill="none" stroke="#435867" stroke-width="6" stroke-linecap="round" />
+              <g id="leaf">
+                <path d="M 196 48 C 206 28 224 24 231 30 C 233 45 216 54 201 51 Z"
+                      fill="#78B159" stroke="#435867" stroke-width="4" stroke-linejoin="round" />
+                <path d="M 199 50 Q 214 40 228 32" fill="none" stroke="#435867" stroke-width="3" stroke-linecap="round" />
+              </g>
+              <circle cx="200" cy="92" r="40" fill="#FF9124" stroke="#435867" stroke-width="6" />
+            </g>
+          </g>
+
+          <!-- PATITAS PARA CUBRIR LOS OJOS (ocultas abajo) -->
+          <g id="paw-left" class="paw" style="transform: translateY(330px);">
+            <!-- Brazo izquierdo: nace del cuerpo y sube hasta la manita -->
+            <path d="M 122 336 C 116 300 124 252 143 206 C 149 197 160 196 167 203 C 158 244 152 292 158 328 C 150 342 132 344 122 336 Z"
+                  fill="#C18A59" stroke="#435867" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" />
+            <path d="M 136 206 C 130 176 142 150 166 150 C 190 150 202 176 196 206 C 178 216 154 216 136 206 Z"
+                  fill="#C18A59" stroke="#435867" stroke-width="6" stroke-linejoin="round" />
+            <path d="M 148 158 L 146 180 M 166 152 L 166 178 M 184 158 L 186 180"
+                  fill="none" stroke="#435867" stroke-width="5" stroke-linecap="round" />
+          </g>
+          <g id="paw-right" class="paw" style="transform: translateY(330px);">
+            <!-- Brazo derecho: nace del cuerpo y sube hasta la manita -->
+            <path d="M 278 336 C 284 300 276 252 257 206 C 251 197 240 196 233 203 C 242 244 248 292 242 328 C 250 342 268 344 278 336 Z"
+                  fill="#C18A59" stroke="#435867" stroke-width="6" stroke-linejoin="round" stroke-linecap="round" />
+            <path d="M 264 206 C 270 176 258 150 234 150 C 210 150 198 176 204 206 C 222 216 246 216 264 206 Z"
+                  fill="#C18A59" stroke="#435867" stroke-width="6" stroke-linejoin="round" />
+            <path d="M 252 158 L 254 180 M 234 152 L 234 178 M 216 158 L 214 180"
+                  fill="none" stroke="#435867" stroke-width="5" stroke-linecap="round" />
+          </g>
+        </g>
+      </svg>
+    </div>
+
+    <!-- ============ FORMULARIO ============ -->
+    <h1>¡Hola, capibara! <span class="wave">👋</span></h1>
+    <p class="subtitle">Inicia sesión y sigue siendo tierno</p>
+
+    <form id="loginForm" novalidate>
+      <div class="field">
+        <label for="email">Correo electrónico</label>
+        <input type="email" id="email" name="email" placeholder="tu@correo.com" autocomplete="username" />
+      </div>
+
+      <div class="field">
+        <label for="password">Contraseña</label>
+        <div class="password-wrap">
+          <input type="password" id="password" name="password" placeholder="••••••••" autocomplete="current-password" />
+          <button type="button" class="toggle-pass" id="togglePass" aria-label="Mostrar contraseña">
+            <svg class="icon-eye-open" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12Z" fill="none" stroke="#435867" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="3" fill="none" stroke="#435867" stroke-width="2" />
+            </svg>
+            <svg class="icon-eye-closed" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M2 12s3.6-6 10-6 10 6 10 6-3.6 6-10 6S2 12 2 12Z" fill="none" stroke="#435867" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <circle cx="12" cy="12" r="3" fill="none" stroke="#435867" stroke-width="2" />
+              <line x1="3" y1="21" x2="21" y2="3" stroke="#435867" stroke-width="2" stroke-linecap="round" />
+            </svg>
+          </button>
+        </div>
+      </div>
+
+      <button type="submit" class="submit-btn">Iniciar sesión</button>
+    </form>
+
+    <p class="footer">¿No tienes cuenta? <a href="registro.html">Regístrate</a></p>
+    <p class="status" id="status" role="status" aria-live="polite"></p>
+
+    <a class="credit" href="https://jon-torlen.github.io/" target="_blank" rel="noopener noreferrer">
+      <img src="jt.jpg" alt="Logo de Jonathan Toro" />
+      <span>Creado por Jonathan Toro</span>
+    </a>
+  </main>
+
+  <!-- GSAP desde CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
